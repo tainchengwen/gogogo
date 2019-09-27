@@ -1,0 +1,58 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<title>后台管理</title>
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script>
+<!--
+$(function(){
+	$(".left_menu li").click(function(){
+		$(".left_menu li").removeClass("on");
+		$(this).addClass("on");
+	});
+
+});
+-->
+</script>
+<style>
+<!--
+body,html{ height:100%; width:100%; padding:0; margin:0;overflow:hidden;}
+body,td,th {font-size: 12px; color:#555}
+a{text-decoration: none; color:#555}
+a:hover{color:#1890cc;}
+div,ul,li{ margin:0px; padding:0px}
+.left{background:#e8e9ee;border-right:1px solid #CCC; padding:10px; height:auto; overflow:hidden}
+
+.left_menu li{ list-style:none; font-size:12px; height:25px; text-align:center; line-height:25px; float:left; width:16.66% }
+.left_menu li a{ display:block;}
+.left_menu li.on{ background:#1890cc; border-radius:3px;}
+.left_menu li.on a{ color:#FFF}
+
+.top{ height:42px;color:#fff; background:url(__TMPL__Skin/images/img_03.gif) no-repeat 10px 5px #1890cc; position:relative; border-bottom:3px solid #0d71a2}
+.top span{font-size:12px; position:absolute; right:20px; top:15px;}
+.top a{color:#fff; font-size:14px; display:inline-block;height:30px; line-height:30px; font-family:Arial;padding-left:20px; padding-right:20px;}
+.top a.shover{ background:#e8e9ee;color:#1890cc;}
+.ifrm{ height:100%;-webkit-overflow-scrolling: touch;overflow:hidden;}
+-->
+</style>
+</head>
+<body>
+
+<div class="top"></div>
+<div class="left">
+    <div class="left_menu">
+        <ul>
+        	<li class="on"><a href="<?php echo U('Content/index');?>" target="right">抽奖记录</a></li> 
+            <li><a href="<?php echo U('User/index');?>" target="right">用户管理</a></li> 
+            <li><a href="<?php echo U('Preset/index');?>" target="right">奖品设置</a></li> 
+        	<li><a href="<?php echo U('config/index');?>" target="right">参数设置</a></li>
+            <li><a href="<?php echo U('Pswd/index');?>" target="right">修改密码</a></li>
+			<li><a href="<?php echo U('Login/out');?>" target="_parent">退出登录</a></li>
+        </ul>
+    </div>
+</div>
+<div class="ifrm"><iframe scrolling="auto" src="<?php echo U('content/index');?>"  valign="top" height="90%" frameborder="0" width="100%" name="right" id="iframe"></iframe></div>
+</body>
+</html>

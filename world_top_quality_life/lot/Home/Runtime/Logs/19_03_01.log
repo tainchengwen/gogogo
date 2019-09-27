@@ -1,0 +1,188 @@
+[ 2019-03-01T11:52:12+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000121s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+SQL: DESCRIBE xz_user [ RunTime:0.003653s ]
+SQL: SELECT * FROM `xz_user` WHERE ( id=26 ) LIMIT 1   [ RunTime:0.000643s ]
+SQL: DESCRIBE xz_webconfig [ RunTime:0.000631s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000260s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000162s ]
+SQL: DESCRIBE xz_lottery [ RunTime:0.000522s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xz_lottery` LIMIT 1   [ RunTime:0.000112s ]
+SQL: DESCRIBE xz_lottery_prize [ RunTime:0.000432s ]
+SQL: SELECT * FROM `xz_lottery_prize` ORDER BY nOrder,id LIMIT 6   [ RunTime:0.000331s ]
+SQL: SELECT * FROM `xz_lottery` ORDER BY id desc LIMIT 20   [ RunTime:0.000283s ]
+SQL: SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId=26 and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc  [ RunTime:0.000244s ]
+NOTIC: [2] file_get_contents(jsapi_ticket.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 48 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 49 行.
+NOTIC: [2] file_get_contents(access_token.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 72 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 73 行.
+NOTIC: [8] Undefined property: stdClass::$access_token /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 78 行.
+NOTIC: [8] Undefined property: stdClass::$ticket /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: nCheckModel /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 62 行.
+NOTIC: [8] Undefined index: uid /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 150 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010121s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001265s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000856s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003365s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001362s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001386s ]
+
+[ 2019-03-01T11:52:22+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000130s ]
+SQL: DESCRIBE xz_user [ RunTime:0.002760s ]
+SQL: SELECT * FROM `xz_user` WHERE ( id=26 ) LIMIT 1   [ RunTime:0.000665s ]
+SQL: DESCRIBE xz_webconfig [ RunTime:0.002536s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.001264s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000382s ]
+SQL: DESCRIBE xz_lottery [ RunTime:0.000735s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xz_lottery` LIMIT 1   [ RunTime:0.000514s ]
+SQL: DESCRIBE xz_lottery_prize [ RunTime:0.000444s ]
+SQL: SELECT * FROM `xz_lottery_prize` ORDER BY nOrder,id LIMIT 6   [ RunTime:0.000215s ]
+SQL: SELECT * FROM `xz_lottery` ORDER BY id desc LIMIT 20   [ RunTime:0.000279s ]
+SQL: SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId=26 and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc  [ RunTime:0.000213s ]
+NOTIC: [2] file_get_contents(jsapi_ticket.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 48 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 49 行.
+NOTIC: [2] file_get_contents(access_token.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 72 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 73 行.
+NOTIC: [8] Undefined property: stdClass::$access_token /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 78 行.
+NOTIC: [8] Undefined property: stdClass::$ticket /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: nCheckModel /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 62 行.
+NOTIC: [8] Undefined index: uid /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 150 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008081s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000129s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000043s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000027s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000317s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000125s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000142s ]
+
+[ 2019-03-01T12:03:55+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: DESCRIBE xz_user [ RunTime:0.000771s ]
+SQL: SELECT * FROM `xz_user` WHERE ( id=26 ) LIMIT 1   [ RunTime:0.001343s ]
+SQL: DESCRIBE xz_webconfig [ RunTime:0.003790s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000282s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000226s ]
+SQL: DESCRIBE xz_lottery [ RunTime:0.001165s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xz_lottery` LIMIT 1   [ RunTime:0.000200s ]
+SQL: DESCRIBE xz_lottery_prize [ RunTime:0.003916s ]
+SQL: SELECT * FROM `xz_lottery_prize` ORDER BY nOrder,id LIMIT 6   [ RunTime:0.000290s ]
+SQL: SELECT * FROM `xz_lottery` ORDER BY id desc LIMIT 20   [ RunTime:0.000321s ]
+SQL: SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId=26 and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc  [ RunTime:0.000385s ]
+NOTIC: [2] file_get_contents(jsapi_ticket.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 48 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 49 行.
+NOTIC: [2] file_get_contents(access_token.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 72 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 73 行.
+NOTIC: [8] Undefined property: stdClass::$access_token /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 78 行.
+NOTIC: [8] Undefined property: stdClass::$ticket /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: nCheckModel /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 62 行.
+NOTIC: [8] Undefined index: uid /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 150 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008340s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008408s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000114s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000022s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000012s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000032s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000054s ]
+
+[ 2019-03-01T12:06:21+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+SQL: DESCRIBE xz_user [ RunTime:0.000889s ]
+SQL: SELECT * FROM `xz_user` WHERE ( id=26 ) LIMIT 1   [ RunTime:0.000423s ]
+SQL: DESCRIBE xz_webconfig [ RunTime:0.000694s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000391s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000214s ]
+SQL: DESCRIBE xz_lottery [ RunTime:0.002716s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xz_lottery` LIMIT 1   [ RunTime:0.000152s ]
+SQL: DESCRIBE xz_lottery_prize [ RunTime:0.000753s ]
+SQL: SELECT * FROM `xz_lottery_prize` ORDER BY nOrder,id LIMIT 6   [ RunTime:0.000250s ]
+SQL: SELECT * FROM `xz_lottery` ORDER BY id desc LIMIT 20   [ RunTime:0.000145s ]
+NOTIC: [2] Invalid argument supplied for foreach() /usr/local/var/www/htdocs/lot/Home/Lib/Action/IndexAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: ID /usr/local/var/www/htdocs/lot/Home/Lib/Action/IndexAction.class.php 第 38 行.
+SQL: SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId= and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc  [ RunTime:0.000864s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc' at line 1
+ [ SQL语句 ] : SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId= and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc 
+NOTIC: [2] file_get_contents(jsapi_ticket.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 48 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 49 行.
+NOTIC: [2] file_get_contents(access_token.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 72 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 73 行.
+NOTIC: [8] Undefined property: stdClass::$access_token /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 78 行.
+NOTIC: [8] Undefined property: stdClass::$ticket /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: nCheckModel /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 62 行.
+NOTIC: [8] Undefined index: uid /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 150 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007608s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000080s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000030s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000081s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000275s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000324s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2019-03-01T12:09:51+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000079s ]
+SQL: DESCRIBE xz_user [ RunTime:0.002118s ]
+SQL: SELECT * FROM `xz_user` WHERE ( id=26 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: DESCRIBE xz_webconfig [ RunTime:0.001611s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000295s ]
+SQL: SELECT * FROM `xz_webconfig` LIMIT 1   [ RunTime:0.000331s ]
+SQL: DESCRIBE xz_lottery [ RunTime:0.000742s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xz_lottery` LIMIT 1   [ RunTime:0.000163s ]
+SQL: DESCRIBE xz_lottery_prize [ RunTime:0.000408s ]
+SQL: SELECT * FROM `xz_lottery_prize` ORDER BY nOrder,id LIMIT 6   [ RunTime:0.000278s ]
+SQL: SELECT * FROM `xz_lottery` ORDER BY id desc LIMIT 20   [ RunTime:0.000299s ]
+NOTIC: [2] Invalid argument supplied for foreach() /usr/local/var/www/htdocs/lot/Home/Lib/Action/IndexAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: ID /usr/local/var/www/htdocs/lot/Home/Lib/Action/IndexAction.class.php 第 38 行.
+SQL: SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId= and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc  [ RunTime:0.000459s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc' at line 1
+ [ SQL语句 ] : SELECT xz_lottery.*,a.pic,a.title2 FROM `xz_lottery` left join xz_lottery_prize a on a.id=xz_lottery.nPrizeId WHERE ( xz_lottery.nUserId= and xz_lottery.nJPTag=0 ) ORDER BY xz_lottery.id desc 
+NOTIC: [2] file_get_contents(jsapi_ticket.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 48 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 49 行.
+NOTIC: [2] file_get_contents(access_token.json): failed to open stream: No such file or directory /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 72 行.
+NOTIC: [8] Trying to get property of non-object /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 73 行.
+NOTIC: [8] Undefined property: stdClass::$access_token /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 78 行.
+NOTIC: [8] Undefined property: stdClass::$ticket /usr/local/var/www/htdocs/lot/Home/Lib/Action/jssdk.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: nCheckModel /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 62 行.
+NOTIC: [8] Undefined index: uid /usr/local/var/www/htdocs/lot/Home/Runtime/Cache/0d69dc0c1860c6d2d3792b001a9986b7.php 第 150 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009860s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009887s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000110s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000052s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000029s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000088s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000105s ]
+

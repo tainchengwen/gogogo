@@ -1,0 +1,27 @@
+@charset "utf-8";
+*{ margin:0; padding:0;color:#555;}
+a{text-decoration:none;color:#1890cc;}
+.red{ color:#F30}
+body {margin:0;font-size:12px;margin:20px 0}
+td,span{font-size:12px}
+.btn{ background:url(../Images/bg.gif) repeat-x; color:#FFFFFF; border:1px; height:25px; border:1px solid #0675ad; padding-left:10px; padding-right:10px; cursor:pointer}
+.btn:hover{background:url(../Images/bg_02.gif) repeat-x;}
+.btn2{ background:url(../Images/bg_03.gif) repeat-x; color:#555;padding-left:8px; padding-right:10px;border:1px solid #ccc; display:inline-block; line-height:20px; margin:0 2px;}
+a.del span{ background:url(../Images/icon_04.png) no-repeat left center; padding-left:12px; display:block}
+a.edit span{background:url(../Images/icon_05.png) no-repeat left center; padding-left:14px; display:block}
+
+#pic_tbl td{ background-color:#F7F7F7}
+#pic2_tbl td{ background-color:#F7F7F7}
+
+.pic{ width:50px; border:1px solid #CCCCCC; height:50px; margin:0 auto; background:#FFFFFF; overflow:hidden; margin-bottom:5px;}
+input{ border:1px #ccc solid; height:22px; line-height:22px; background:#fff; padding-left:5px;}
+textarea{background:#fff;border:1px #ccc solid; overflow:auto}
+select{ border:1px #ccc solid; background:#fff; padding:2px;}
+input.checkbox{ border:0; background:none}
+
+table{ margin:0 auto}
+.tbl tr:hover td{ background:#f3f9fc}
+.tbl tr.tbl_tt td{font-weight:bold; text-align:center; background:url(../Images/bg_03.gif) repeat-x;  height:30px; font-family:"微软雅黑"}
+
+td.pdn{ padding-left:10px;}
+.tbl2 td{ padding-left:20px;}

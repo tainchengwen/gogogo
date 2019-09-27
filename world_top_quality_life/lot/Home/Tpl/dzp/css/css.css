@@ -1,0 +1,89 @@
+@charset "utf-8";
+*{ margin:0;padding:0;-webkit-text-size-adjust:100%;text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-appearance: none; box-sizing:border-box; -webkit-box-sizing:border-box;-moz-box-sizing:border-box; }
+img{border:0;}
+ul,ol,li{list-style:none;}
+a{ text-decoration:none;outline:none}
+html{width:100%;}
+body{background:#d8261c url(../images/bg.jpg) no-repeat top center ;background-size:100%; margin-top:3rem;width:100%;font-family:"微软雅黑"; font-size:0.16rem;}
+input{font-family:"微软雅黑";}
+
+.main{ margin:0 auto; width:6.4rem;}
+.lot-num{height:0.4rem; line-height:0.4rem;text-align:center; color:#e2557f; background:rgba(255,255,255,0.8); width:3rem; border-radius:0.2rem; margin:0 auto;}
+.core-w{ background:url(../images/t8.png) no-repeat center;margin-top:0.5rem;background-size:100%;}
+.core{position:relative;height:5.4rem; width:5.4rem; margin:0 auto;}
+
+.rotary{ background:url(../images/bg.gif) no-repeat center;background-size:102%; border:0.02rem solid #fdb02f; overflow:hidden; width:100%; height:100%; border-radius:50%; }
+.rotary p{ background:rgba(255,255,255,0.3); width:1.8rem; height:1.8rem; position:absolute; left:50%; top:50%; margin-top:-0.9rem; margin-left:-0.9rem; border-radius:50%;}
+.rotary ul{width:4.8rem; height:4.8rem; position:absolute;top:50%; background:#fff; margin-top:-2.41rem; left:50%; margin-left:-2.41rem;border-radius:50%; overflow:hidden}
+.rotary ul li{ position:absolute; left:50%; top:0;color:#000;width: 0;height: 0; line-height:1.2;}
+.rotary ul li span{ display:block; position:absolute; text-align:center; font-weight:bold; top:-2.2rem; width:1.6rem; left:-0.8rem; z-index:90;text-shadow:0 0 0.1rem #fff; font-size:0.28rem;}
+.rotary ul li span img{ display:block; margin:0.1rem auto 0; width:0.65rem;}
+.rotary ul li i{display:block; font-size:0.2rem; font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; font-weight:normal; color:#555;}
+.rotary ul li:nth-child(2n+1){ border-top-color:#f8ae2d;}
+.rotary ul li:nth-child(2n){ border-top-color:#fde34a;}
+
+.hand{background:url(../images/t14.png) no-repeat center;background-size:100%;height:1.8rem; width:1.8rem; top:50%; margin-top:-1.04rem; left:50%; margin-left:-0.9rem;z-index:99; position:absolute;}
+.hand a{ display:block; margin:0.16rem auto 0; width:1.35rem; height:1.35rem;border-radius:50%}
+
+
+.mask{ width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:998; position:fixed; left:0; top:0; display:none;}
+.opwin{ width:80%; top:35%;text-align:center; position:absolute; background:#fff; border-radius:0.1rem; left:10%; z-index:999; display:none}
+.opwin div{padding:0.5rem; }
+.opwin h1{ text-align:center; font-size:0.24rem; margin-bottom:0.2rem;}
+.opwin h3{ font-weight:100; font-size:0.3rem; margin-top:0.2rem;}
+
+.form li{ margin:0.2rem 0;}
+input.txt,input.btn,.a-btn{ width:100%; outline:none; font-size:0.2rem; background:#fff; border:0.01rem solid #d8261c; height:0.6rem;color:#d8261c; padding:0 2%}
+input.btn,.a-btn{ width:100%; padding:0;background:#d8261c; color:#fff; font-size:0.24rem}
+.a-btn{ display:block; width:60%; margin:0.3rem auto 0; line-height:0.5rem;height:0.5rem;}
+.w-btn{font-size:0.6rem; font-weight:100;color:#d8261c; position:absolute; right:5px; top:-10px;}
+
+.result{ position:fixed;}
+.result h1{ font-weight:100; font-size:0.5rem; margin-bottom:0.2rem;}
+
+@keyframes  rainbow{
+    0% {
+        background:url("../images/finger.png") no-repeat center center;background-size:100%;
+    }
+    50%{
+        background:url("../images/ontouch_finger.png") no-repeat center center;background-size:100%;
+    }
+}
+.finger_rainbow{
+    animation: 1s rainbow infinite;
+}
+.finger{opacity:0;
+    position:absolute; z-index:99;pointer-events:none;
+    left: 2.8rem;
+    top: 2.5rem;
+    width:1.31rem;
+    height:1.02rem;
+    background:url("../images/finger.png") no-repeat center center;background-size:100%;
+}
+.finger{opacity:1;transition-delay:1.5s;-webkit-transition-delay:1.5s;-moz-transition-delay:1.5s;-o-transition-delay:1.5s;}
+
+.tab{ margin:0.2rem;}
+
+.prize{height:auto; overflow:hidden; margin-bottom:0.1rem;display: -webkit-flex;-webkit-align-items: stretch;-webkit-flex-wrap: wrap;display: flex;align-items: stretch;flex-wrap: wrap;}
+.prize dl{ float:left; width:31.33%; padding:0.05rem; text-align:center; margin:0.1rem 1%; background:#fff;border-radius:0.05rem; color:#000}
+.prize dl dt{ background:#fff;border-radius:0.05rem; overflow:hidden; margin-bottom:0.01rem;}
+.prize dl dt img{ width:100%; display:block}
+.prize dl dd{line-height:1.4; margin-top:0.1rem; font-size:0.16rem;}
+
+.tab-ct{background:rgba(255,255,255,0.3); padding:0.2rem; border-radius:0.03rem;height:auto; overflow:hidden;}
+
+.tab-nav{ height:0.65rem;border-radius:0.03rem; overflow:hidden;}
+.tab-nav span{ display:block;color:#fff; width:25%;float:left; border-left:0.01rem solid rgba(255,255,255,0.4); box-sizing:border-box;  -moz-box-sizing:border-box; -webkit-box-sizing:border-box;font-size:0.16rem;text-align:center;background:rgba(255,255,255,0.3);line-height:0.5rem;}
+.tab-nav span:nth-child(1){ border:0;}
+.tab-nav span.on{ font-weight:bold; position:relative; color:#f6e112;}
+.tab-nav span.on:after{width: 0;height: 0;border-left:0.1rem solid transparent;border-right:0.1rem solid transparent;border-top:0.1rem solid rgba(255,255,255,0.3); display:block; content:''; position:absolute; left:50%; bottom:-0.1rem; margin-left:-0.1rem;}
+.tab-ct{display:none; color:#fff;}
+
+.notice{ width:90%; position:fixed; left:5%; top:20%; text-align:center; line-height:2; font-size:0.24rem; color:#F30; z-index:999}
+.notice div{ margin-top:-0.5rem; border-radius:3px; padding:0.4rem;background:rgba(100%,100%,100%,0.9); -webkit-box-shadow: 0 0 0.2rem rgba(0,0,0,.5); -moz-box-shadow: 0 0 0.2rem rgba(0,0,0,.5); -o-box-shadow: 0 0 0.2rem rgba(0,0,0,.5); box-shadow: 0 0 0.2rem rgba(0,0,0,.5); }
+.notice div hr{ border:0; border-bottom:0.01rem dashed #fff; padding-bottom:0.2rem; margin-bottom:0.2rem;}
+#time{ font-size:0.3rem; font-family:Arial, Helvetica, sans-serif;}
+
+.notice h3{ text-align:center; color:#F30; font-size:0.28rem;line-height:0.6rem; letter-spacing:0.1rem;margin-bottom:0.2rem; background:url(../images/tt.png) no-repeat center; background-size:auto 100%; height:0.8rem; position:relative; z-index:9}
+input.txt{ font-size:0.2rem; height:0.6rem; width:100%; border:0; background:#eee; outline:none; padding:0 3%;}
+input.f-btn{ border:0;font-size:0.3rem; width:100%; height:0.6rem; border-radius:0.03rem; background:#d8261c; color:#fff; outline:none;}

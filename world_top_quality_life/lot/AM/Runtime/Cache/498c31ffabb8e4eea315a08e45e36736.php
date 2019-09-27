@@ -1,0 +1,81 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<title>网站后台管理登录</title>
+<script src="__PUBLIC__/JS/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+<!--
+*{margin:0; padding:0;}
+body{font-size:14px}
+input{border:0;height:50px; width:96%; font-size:18px; padding:0 2%; background:#eee; outline:none;}
+.header{text-align:center; font-size:24px; height:70px; background:#1890cc; color:#fff; line-height:70px; margin:0 0 20px}
+.wrap{ margin:10px;}
+td{ height:70px;}
+-->
+</style>
+<script>
+<!--
+$(function(){
+	$('img.yzm').click(function(){
+		var s = $(this).attr('src');
+		$(this).attr('src',s+'?'+Math.random());
+	});
+});
+function checkForm()
+{        
+	var f=document.form1;
+	if(checkSpace(f.admin_name.value)) {
+		f.admin_name.focus();
+		alert("对不起,请输入用户名!");
+		return false;
+	}
+	if(checkSpace(f.admin_pass.value)) {
+		f.admin_pass.focus();
+		alert("对不起,请输入密码!");
+		return false;
+	}
+	if(checkSpace(f.verifycode.value)) {
+		f.verifycode.focus();
+		alert("对不起,请输入验证码!");
+		return false;
+	}
+}
+function checkSpace(checkStr){
+	var str = '';
+	for(i = 0; i < checkStr.length; i++) {
+		str = str + ' ';
+	}
+	return (str == checkStr);
+}
+-->
+</script>
+</head>
+
+<body>
+<div style=" margin:0 auto; max-width:600px;">
+    <form id="form1" name="form1" method="post" action="<?php echo U('check');?>" onsubmit="return checkForm()">
+    <div class="header">后台登录</div>
+    <div class="wrap">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><input name="admin_name" type="text" id="admin_name" size="20" maxlength="20" placeholder="请输入用户名"/></td>
+      </tr>
+      <tr>
+        <td><input name="admin_pass" type="password" id="admin_pass" size="20" maxlength="20" placeholder="请输入密码"/></td>
+      </tr>
+      <tr>
+        <td style="position:relative"><input name="verifycode" type="text" id="verifycode" size="8" maxlength="4" placeholder="请输入验证码"/>
+          <img src="__URL__/verify" height="40" style="position:absolute;right:5px;top:15px;"/></td>
+      </tr>
+      <tr>
+        <td><input type="submit" name="Submit" value="登 录" style="width:100%; padding:0; font-size:18px; color:#fff; background:#1890cc;"/></td>
+      </tr>
+      
+    </table>
+    </div>
+    </form>
+</div>
+</body>
+</html>

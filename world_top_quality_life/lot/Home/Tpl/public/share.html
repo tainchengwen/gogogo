@@ -1,0 +1,112 @@
+<if condition="$user['subscribe'] eq 0 and $config.nNeedGZ eq 1">
+<div class="mask" style="display:block; z-index:998"></div>
+<div class="opwin" style="display:block; top:15%; position:fixed; z-index:999">
+    <div>
+        <p style="font-size:0.18rem;">
+        	 <span>长按下方二维码图片<br />关注微信公众号,即可参与活动</span><br><br>
+            <img src="__PUBLIC__/{$config['ewm_pic']}" width="80%">
+        </p>
+    </div>
+</div>
+</if>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+var shareConfig = {
+	title: '{$config.web_name}',
+	imgUrl: 'http://<?php echo $_SERVER['HTTP_HOST']; ?>/__PUBLIC__/{$config.logo_path}',
+	link: 'http://<?php echo $_SERVER['HTTP_HOST']; ?>__ROOT__/index.php/index/?fid=<?php echo $user["id"];?>',
+	desc: '{$config.txt1}',
+	callback: ''
+};
+wx.config({
+	debug: false,
+	appId: '<?php echo $signPackage["appId"];?>',
+	timestamp: <?php echo $signPackage["timestamp"];?>,
+	nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+	signature: '<?php echo $signPackage["signature"];?>',
+	jsApiList: [
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage'
+	  ]
+});
+wx.ready(function () {
+	wx.onMenuShareAppMessage({
+	  title:shareConfig.title,
+	  desc: shareConfig.desc,
+	  link: shareConfig.link,
+	  imgUrl: shareConfig.imgUrl,
+	  trigger: function (res) {
+		//alert(JSON.stringify(res));
+	  },
+	  success: function (res) {
+		$.get('{:U("share")}',function(rtn){
+			if(rtn.status){
+				alert(rtn.txt);
+			}
+		});
+	  },
+	  cancel: function (res) {
+		//alert('已取消');
+	  },
+	  fail: function (res) {
+		//alert(JSON.stringify(res));
+	  }
+	});
+	wx.onMenuShareTimeline({
+	  title:shareConfig.title,
+	  desc: shareConfig.desc,
+	  link: shareConfig.link,
+	  imgUrl: shareConfig.imgUrl,
+	  trigger: function (res) {
+	  },
+	  success: function (res) {
+		$.get('{:U("share")}',function(rtn){
+			if(rtn.status){
+				alert(rtn.txt);
+			}
+		});
+	  },
+	  cancel: function (res) {
+	  },
+	  fail: function (res) {
+	  }
+	});
+	wx.error(function(res){
+		//alert(JSON.stringify(res));
+	});
+});
+
+</script>
+
+<if condition="$config['nMusicTag'] eq 1">
+<style>
+.music-swicth{ background:url(__ROOT__/Home/Tpl/public/images/off.png) no-repeat center;background-size:100%; width:0.64rem; height:0.64rem; cursor:pointer; top:0.2rem; right:0.2rem; position:absolute; z-index:11;}
+.on{background:url(__ROOT__/Home/Tpl/public/images/on.png) no-repeat center;background-size:100%;}
+</style>
+<div class="music-swicth on"></div>
+<audio id="bgMuisc" autoplay="autoplay" loop src="{$config['music_url']}" preload="auto"></audio>
+<script>
+$(function(){
+	var ms=document.getElementById('bgMuisc');
+	$(".music-swicth").click(muisc);
+	function muisc(){
+		if(!ms.paused){
+			ms.pause();
+			$(".music-swicth").removeClass("on");
+		}else{
+			ms.play();
+			$(".music-swicth").addClass("on");
+		}
+	}
+});
+function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    //audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+    	audio.play();
+    }, false);
+}
+audioAutoPlay('bgMuisc');
+</script>
+</if>

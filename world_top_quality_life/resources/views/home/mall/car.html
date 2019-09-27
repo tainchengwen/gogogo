@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>购物车</title>
+		<link  rel="stylesheet" href="css/index.css"/>
+		<script src="js/jquery.min.js"></script>
+		<style>
+			.wuliu_info{display: none;}
+		</style>
+		<script>
+			(function(doc, win) {
+			    var docEl = doc.documentElement,
+			        isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+			        dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+			        dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+			        dpr = 1,
+			        scale = 1 / dpr,
+			        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+			    docEl.dataset.dpr = dpr;
+			    var metaEl = doc.createElement('meta');
+			    metaEl.name = 'viewport';
+			    metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+			    docEl.firstElementChild.appendChild(metaEl);
+			    var recalc = function() {
+			        var width = docEl.clientWidth;
+			        if (width / dpr > 750) {
+			            width = 100 * dpr;
+			        }
+			        // 乘以100，px : rem = 100 : 1
+			        docEl.style.fontSize = 75 * (width / 750) + 'px';
+			    };
+			    recalc()
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			})(document, window);
+			
+			var spIds=[];
+			$(function(){
+
+			});
+			function jian(obj){
+				var num=parseInt($(obj).parent(".car_num").find(".car_ipt").text());
+				  if(num>1){
+				  	$(obj).parent(".car_num").find(".car_ipt").text(num-1);
+				  }
+				  hejiShow();
+			}
+			function jia(obj){
+				
+				var num=parseInt($(obj).parent(".car_num").find(".car_ipt").text());
+				  if(num<999){
+				  	$(obj).parent(".car_num").find(".car_ipt").text(num+1);
+				  }
+				  hejiShow();
+			}
+			// 全选
+	function allCheck(){
+			var a = document.getElementById("all");
+			var d = document.getElementsByName("seed");
+			if(a.checked){
+				 $(".car_op_check").css("background","url(img/xuanze.png)no-repeat left center");
+				 $(".car_op_check").css("background-size","0.5rem 0.5rem");
+				for(var i=0;i<d.length;i++){
+					d[i].checked="checked";
+					 $(".car_check").css("background","url(img/xuanze.png)no-repeat 0.2rem 0.2rem");
+					 $(".car_check").css("background-size","0.5rem 0.5rem");
+				}
+			}else{
+				 $(".car_op_check").css("background","url(img/weixuanze.png)no-repeat left center");
+				 $(".car_op_check").css("background-size","0.5rem 0.5rem");
+				for(var i=0;i<d.length;i++){
+					d[i].checked=false;
+					 $(".car_check").css("background","url(img/weixuanze.png)no-repeat 0.2rem 0.2rem");
+					 $(".car_check").css("background-size","0.5rem 0.5rem");
+				}	
+			}
+			 hejiShow();
+		}
+	function buyCheck(obj){
+			var d = document.getElementsByName("seed");
+			var a = document.getElementById("all");
+			var c = true;
+			if ($(obj).is(':checked')) {
+				$(obj).parents(".car_check").css("background","url(img/xuanze.png)no-repeat 0.2rem 0.2rem ");
+				$(obj).parents(".car_check").css("background-size","0.5rem 0.5rem");
+			}else{
+				$(obj).parents(".car_check").css("background","url(img/weixuanze.png)no-repeat 0.2rem 0.2rem ");
+				$(obj).parents(".car_check").css("background-size","0.5rem 0.5rem");
+			};
+			if(a.checked){
+				for(var i=0;i<d.length;i++){
+					if(d[i].checked==false){
+						a.checked=false;
+						 $(".car_op_check").css("background","url(img/weixuanze.png)no-repeat left center");
+			             $(".car_op_check").css("background-size","0.5rem 0.5rem");
+						break;
+						
+					}	
+				}
+			}else{
+					for(var i=0;i<d.length;i++){
+						if(d[i].checked==false){
+						c=false;
+						
+						break;
+						}	
+					}
+					if(c){
+						a.checked="checked";
+						 $(".car_op_check").css("background","url(img/xuanze.png)no-repeat left center");
+			             $(".car_op_check").css("background-size","0.5rem 0.5rem");
+					}
+			}
+			 hejiShow();
+	}	
+	function hejiShow(){
+				spIds=[];
+				var  cars=$(".car_box");
+				var maney1=0;
+				for(var i=0;i<cars.length;i++){
+					var num=parseInt($(".car_num .car_ipt").eq(i).text());
+					var maney1Txt=$(".car_box .car_maney_sp1").eq(i).text();
+					if($(".car_box .car_check input").eq(i).is(':checked')){
+						//获取商品的id和数量
+						spIds.push([$(".car_box").eq(i).attr("key"),num]);
+						//获取商品总价
+						maney1+=parseFloat(maney1Txt.substr(1)*num);
+					}
+				}
+				$(".car_op_maney span").text("￥"+maney1);	
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div class="content">
+			<div class="tab_content" style="bottom: 2.7rem;top:0;">
+				
+				<div class="car_box" key="1">
+					<div class="car_check">
+						<input type="checkbox" name="seed" onchange="buyCheck(this)"/>
+					</div>
+					<div class="car_img">
+						<img src="img/buy.png"/>
+					</div>
+					<div class="car_info">
+						<div class="car_name">日本资生堂洗颜专科泡洗面奶120g...</div>
+						<div class="car_bianhao">商品编码：12345678</div>
+						<div class="car_maney">
+							<span class="car_maney_sp1">￥1500</span><img src="img/vip.png"/><span class="car_maney_sp2">￥1200</span>
+						</div>
+						<div class="car_pay">
+							<div class="car_kucun">库存充足</div>
+							<div class="car_num">
+								<span class="car_jian" onClick="jian(this)"></span><span class="car_ipt" >1</span><span class="car_jia" onClick="jia(this)"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="car_box" key="2">
+					<div class="car_check">
+						<input type="checkbox" name="seed" onchange="buyCheck(this)"/>
+					</div>
+					<div class="car_img">
+						<img src="img/buy.png"/>
+					</div>
+					<div class="car_info">
+						<div class="car_name">日本资生堂洗颜专科泡洗面奶120g...</div>
+						<div class="car_bianhao">商品编码：12345678</div>
+						<div class="car_maney">
+							<span class="car_maney_sp1">￥1500</span><img src="img/vip.png"/><span class="car_maney_sp2">￥1200</span>
+						</div>
+						<div class="car_pay">
+							<div class="car_kucun">库存充足</div>
+							<div class="car_num">
+								<span class="car_jian" onClick="jian(this)"></span><span class="car_ipt" >1</span><span class="car_jia" onClick="jia(this)"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="car_box" key="3">
+					<div class="car_check">
+						<input type="checkbox" name="seed" onchange="buyCheck(this)"/>
+					</div>
+					<div class="car_img">
+						<img src="img/buy.png"/>
+					</div>
+					<div class="car_info">
+						<div class="car_name">日本资生堂洗颜专科泡洗面奶120g...</div>
+						<div class="car_bianhao">商品编码：12345678</div>
+						<div class="car_maney">
+							<span class="car_maney_sp1">￥1500</span><img src="img/vip.png"/><span class="car_maney_sp2">￥1200</span>
+						</div>
+						<div class="car_pay">
+							<div class="car_kucun">库存充足</div>
+							<div class="car_num">
+								<span class="car_jian" onClick="jian(this)"></span><span class="car_ipt" >1</span><span class="car_jia" onClick="jia(this)"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="car_box" key="3">
+					<div class="car_check">
+						<input type="checkbox" name="seed" onchange="buyCheck(this)"/>
+					</div>
+					<div class="car_img">
+						<img src="img/buy.png"/>
+					</div>
+					<div class="car_info">
+						<div class="car_name">日本资生堂洗颜专科泡洗面奶120g...</div>
+						<div class="car_bianhao">商品编码：12345678</div>
+						<div class="car_maney">
+							<span class="car_maney_sp1">￥1500</span><img src="img/vip.png"/><span class="car_maney_sp2">￥1200</span>
+						</div>
+						<div class="car_pay">
+							<div class="car_kucun">库存充足</div>
+							<div class="car_num">
+								<span class="car_jian" onClick="jian(this)"></span><span class="car_ipt" >1</span><span class="car_jia" onClick="jia(this)"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			
+			<div class="car_op">
+					<div class="car_op_check">
+						<input type="checkbox" name="need" id="all" onchange="allCheck()"/>
+			 			全选
+					</div>
+					<div class="car_op_del">删除</div>
+					<div class="car_op_maney">
+						总计:<span>￥0</span>
+					</div>
+					<div class="car_op_btn">
+						<span class="buyBtn">确认订单</span>
+					</div>
+				</div>
+		</div>
+		<div class="foot">
+				<div class="foot_box">
+					<div class="foot_img">
+						<img src="img/home.png"/>
+					</div>
+					<span>购买</span>
+				</div>
+				<div class="foot_box foot_active">
+					<div class="foot_img">
+						<img src="img/buy_active.png"/>
+					</div>
+					<span>购物车</span>
+				</div>
+				<div class="foot_box">
+					<div class="foot_img">
+						<img src="img/my.png"/>
+					</div>
+					<span>我的</span>
+				</div>
+			</div>
+	</body>
+</html>

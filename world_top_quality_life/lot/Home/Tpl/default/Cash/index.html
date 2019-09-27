@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<title>奖品兑换</title>
+<script src="__TMPL__js/jquery-1.7.2.min.js" language="javascript"></script> 
+<style>
+*{ padding:0; margin:0;-webkit-text-size-adjust: 100%; text-size-adjust: 100%; -moz-text-size-adjust: 100%;}
+body{ margin:20px;}
+td{ padding:5px;}
+h1{ font-size:20px; text-align:center; margin-bottom:20px; border-bottom:1px solid #333; margin-bottom:20px; padding-bottom:20px;}
+</style>
+</head>
+
+<body>
+<div class="main"> 
+<notempty name="rs">
+<form action="{:U('save')}" method="post">
+<h1>兑奖操作</h1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>兑换奖品：</td>
+    <td>{$rs.jiangPin}</td>
+  </tr>
+  <tr>
+    <td>中奖时间：</td>
+    <td>{$rs.subtime}<input name="rid" type="hidden" value="{$rs.id}"></td>
+  </tr>
+  <if condition="$rs.nStatus eq 0">
+  <notempty name="list">
+  <tr>
+    <td>兑换门店：</td>
+    <td><select name="shop">
+    <volist name="list" id="vo">
+    <option value="{$vo}">{$vo}</option>
+    </volist>
+    </select>
+    </td>
+  </tr>
+  </notempty>
+  <tr>
+    <td>兑奖密码：</td>
+    <td><input name="dj_pswd" type="password" value="" size="40" maxlength="40"></td>
+  </tr> 
+  <tr>
+    <td>工作人员姓名：</td>
+    <td><input name="remarks" type="text" value="" size="40" maxlength="40"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+    <input type="submit" name="button" id="button" value="确定兑换">
+    </td>
+  </tr>
+
+  <else/>
+  <tr>
+    <td>兑奖信息：</td>
+    <td>
+    {$rs.cash_info}
+    </td>
+  </tr>
+  <tr>
+    <td>兑奖时间：</td>
+    <td>
+    {$rs.cash_time}
+    </td>
+  </tr>
+  </if>
+
+  
+</table>
+</form>
+<else/>
+没有相关信息
+</notempty>
+
+	
+</div>
+</body>
+</html>

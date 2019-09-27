@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<title>抽奖记录</title>
+<link href="__TMPL__Skin/Css/css.css" rel="stylesheet" type="text/css"/>
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script src="__PUBLIC__/js/admin.js"></script>
+</head>
+<body>
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" height="40">
+    <form action="{:U('index')}" method="post">
+    用户名：<input name="username" type="text" size="20" value="{$search['username']}"> 
+    <input type="submit" value="查询" class="btn"> 
+    <input type="button" class="btn" value="导出Excel" onClick="window.location='{:U("toExcel")}'">
+    <input type="button" value="一键清空" class="btn" style=" float:right;" onClick="if(confirmFuc()){window.location='<?php echo U("lot_del_all"); ?>'}"> 
+    
+    </form></td>
+  </tr>
+</table>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#dddddd" class="tbl">
+  <tr class="tbl_tt">
+    <td width="15%">用户名</td>
+    <td width="15%">头像</td>
+    <td>中奖时间</td>
+    <td>奖品</td>
+    <td>信息</td>
+    <td>操作</td>
+  </tr>
+<volist name="lottery" id="vo">
+  <tr>
+    <td align="center" height="30" bgcolor="#FFFFFF">{$vo.username}</td>
+    <td align="center" bgcolor="#FFFFFF"><img src="{$vo.icon_path}" width="50"></td>
+    <td align="center" bgcolor="#FFFFFF">{$vo.subtime}</td>
+    <td align="center" bgcolor="#FFFFFF">{$vo.jiangPin}<if condition="$vo.nStatus eq 1"><br><span style="color:#FF0000">已兑奖</span></if></td>
+    <td align="center" bgcolor="#FFFFFF">{$vo.sname},{$vo.mobile},{$vo.cjm},{$vo.address},{$vo.remarks}</td>
+    <td align="center" bgcolor="#FFFFFF">
+	<a href="{:U('edit?id='.$vo['id'].'')}" class="btn2 edit"><span>兑</span></a> 
+	<a href="{:U('del?id='.$vo['id'].'')}" class="btn2 del" onClick="return confirmFuc()"><span>删</span></a>
+	</td>
+  </tr>
+</volist>
+</table>
+<table width="98%" align="center" cellspacing="0">
+  <tr>
+    <td width="8%" height="31" align="left"></td>
+    <td width="92%" align="right">{$PageTurn}</td>
+  </tr>
+</table>
+</body>
+</html>

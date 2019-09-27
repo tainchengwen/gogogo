@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>订单支付</title>
+		<link  rel="stylesheet" href="css/index.css"/>
+		<script src="js/jquery.min.js"></script>
+		<style>
+		</style>
+		<script>
+			(function(doc, win) {
+			    var docEl = doc.documentElement,
+			        isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+			        dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+			        dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+			        dpr = 1,
+			        scale = 1 / dpr,
+			        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+			    docEl.dataset.dpr = dpr;
+			    var metaEl = doc.createElement('meta');
+			    metaEl.name = 'viewport';
+			    metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+			    docEl.firstElementChild.appendChild(metaEl);
+			    var recalc = function() {
+			        var width = docEl.clientWidth;
+			        if (width / dpr > 750) {
+			            width = 100 * dpr;
+			        }
+			        // 乘以100，px : rem = 100 : 1
+			        docEl.style.fontSize = 75 * (width / 750) + 'px';
+			    };
+			    recalc()
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			})(document, window);
+			
+			
+			$(function(){
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+	
+		<div class="content">
+			<div class="tab_content" style="top:0;bottom: 0;">
+					
+				<div class="addr_kuaidi box pay_info" style="margin-top: 0.32rem;">
+					<div class="dingdan_info_box">
+						<div class="dingdan_info_div1">
+							订单编号:
+							<span>1234567890</span>
+						</div>
+						<div class="dingdan_info_div1">
+							实付金额:
+							<span style="font-size: 0.32rem;line-height: 0.6rem;margin-left: 0.1rem;color: #777;">共2件商品</span>
+							<span style="font-size: 0.42rem;color: #FE4070;">￥120</span>
+						</div>
+						
+					</div>
+
+				</div>
+				
+				<div class="addr_kuaidi box pay_info pay_type erweima_box">
+					<div class="tab_shaixuan_box" >
+						<img src="img/weixin.png"> 微信线下支付
+					</div>
+					<div class="pay_txt">
+						您可直接添加客服微信完成转账，并后续由客服进行人工发货。为保证您的财产安全，请核实客服微信。
+					</div>
+					<div class="pay_erweima">
+						<img src="img/erweima.png"/>
+						<div>客服名称XXX</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>
